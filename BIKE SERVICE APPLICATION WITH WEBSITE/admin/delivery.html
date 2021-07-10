@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width =device-width, initial-scale =1,maximum-scale=1">
+		<!-- title -->
+        <title>Admin</title>
+		<!-- css -->
+        <link rel="stylesheet" href="css/style2.css">
+        
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    </head>
+    <body>
+        <input type="checkbox" id="nav-toggle">
+		<!-- sidebar starts here -->
+        <div class="sidebar">
+		<!-- sidebar title -->
+            <div class="sidebar-brand">
+                <h2><span class="lab la-accusoft"></span><span>BIKE WORK<br> SHOP</span></h2>
+            </div>
+			<!-- sidebar menu -->
+            <div class="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="dashboard.html" ><span class="las la-igloo"></span>
+                            <span>DASHBOARD</span></a>
+                    </li>
+                    <li>
+                        <a href="customer.html" ><span class="las la-users"></span>
+                            <span>CUSTOMERS</span></a>
+                    </li>
+                    <li>
+                        <a href="pending.html" ><span class="las la-clipboard-list"></span>
+                            <span>PENDING</span></a>
+                    </li>
+					 <li>
+                        <a href="delivery.html" class="active" ><span class="las la-shopping-bag"></span>
+                            <span>DELIVERY</span></a>
+                    </li>
+					<li>
+                        <a href="completed.html"><span class="las la-receipt"></span>
+                            <span>COMPLETED</span></a>
+                    </li>
+                   
+                    
+                    <li>
+                        <a href="login.html"><span class="las la-receipt"></span>
+                            <span>LOGOUT</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+		<!-- sidebar ends here -->
+		
+		
+        <div class="main-content">
+		<!-- header starts here -->
+            <header>
+                <h2>
+                    <label for="nav-toggle">
+                        <span class="las la-bars"></span>
+                    </label>
+                    Dashboard
+                </h2>
+
+                <div class="user-wrapper">
+                    <img src="images/review2.jpg" width="30px" height="30px" alt="">
+                    <div>
+                        <h4>Lisha Dhamothar</h4>
+                        <small> Admin</small>
+                    </div>
+                </div>
+            </header>
+			<!-- header ends here -->
+            <main>
+			<!-- main-contents starts here -->
+                 <div class="projects">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Ready to Delivery Records</h3> 
+                            </div>
+							<!--  completed data's are Ready to Delivery
+							(Here i attached the dummy data's for Delivery section) -->
+							<div class="cards-body">
+                                <div class="table-responsiv">
+                                    <table width="100%">
+                                        <thead>
+                                            <tr>
+                                                <td>SI.NO</td>
+												<td>Cus ID</td>
+                                                <td>Name</td>
+                                                <td>Email</td>
+												<td>Contact </td>
+												<td>Service</td>
+												<td>Status</td>
+												<td>Action</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1001</td>
+												<td>Lisha</td>
+                                                <td>lisha@gmail.com</td>
+												<td>8523948400</td>
+												<td>Oil Change</td>
+                                                <td><span class="las la-clipboard-list"style="color:#DD2F6E; font-size:30px;"></span> READY TO DELIVERY</td> 
+												<td><a href="completed_reply.html" style="color:white;"><span style="color:#DD2F6E; font-size:40px;" class="las la-reply"></span></a></td>
+											</tr>
+                                          <tr>
+                                                <td>2</td>
+                                                <td>1002</td>
+												<td>Zara</td>
+                                                <td>Zara@gmail.com</td>
+												<td>9545848400</td>
+												<td>Water Wash</td>
+                                                <td><span class="las la-clipboard-list"style="color:#DD2F6E; font-size:30px;"></span> READY TO DELIVERY</td> 
+												<td><a href="completed_reply.html" style="color:white;"><span style="color:#DD2F6E; font-size:40px;" class="las la-reply"></span></a></td>
+                                            </tr>
+											   <tr>
+                                                <td>3</td>
+                                                <td>1003</td>
+												<td>Tamil</td>
+                                                <td>Tamil@gmail.com</td>
+												<td>9994979400</td>
+												<td>General Service</td>
+                                                <td><span class="las la-clipboard-list"style="color:#DD2F6E; font-size:30px;"></span> READY TO DELIVERY</td> 
+												<td><a href="completed_reply.html" style="color:white;"><span style="color:#DD2F6E; font-size:40px;" class="las la-reply"></span></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+            </main>
+			
+			<!-- main-contents ends here -->
+        </div>
+
+    </body>
+</html>

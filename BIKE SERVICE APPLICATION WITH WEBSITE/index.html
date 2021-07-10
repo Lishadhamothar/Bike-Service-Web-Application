@@ -1,0 +1,500 @@
+<html>
+    <head>
+        <meta name="viewport" content="width =device-width, initial-scale =1">
+        <!--title-->
+        <title>Bike Service Center</title>
+        <!--Css link-->
+        <link rel="stylesheet" href="style.css">
+		<!-- animation -->
+		<link rel="stylesheet" href="animate.css">
+        <!--Font-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        <!--For Smooth scoll-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!--jquery-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqBootstrapValidation/1.3.6/jqBootstrapValidation.js"></script>
+
+			<!--Form validation script for contact page-->
+			<script>
+				function printError(elemId, hintMsg) {
+				document.getElementById(elemId).innerHTML = hintMsg;
+				}
+				function validateForm() {
+
+			// Retrieving the values of form elements 
+			var fname = document.contactForm.fname.value;
+			var email = document.contactForm.email.value;
+			var mobile = document.contactForm.mobile.value;
+			var status = document.contactForm.status.value;
+
+			var fnameErr = emailErr = mobileErr = statusErr = true;
+
+			 // Validate name
+			 if(fname == "") {
+					printError("fnameErr", "Please enter your name");
+				} else {
+					var regex = /^[a-zA-Z\s]+$/;                
+					if(regex.test(fname) === false) {
+						printError("fnameErr", "Please enter a valid name");
+					} else {
+						printError("fnameErr", "");
+						fnameErr = false;
+					}
+				}
+
+				 // Validate email address
+				 if(email == "") 
+				 {
+							printError("emailErr", "Please enter your email address");
+							} else {
+					// Regular expression for basic email validation
+							var regex = /^\S+@\S+\.\S+$/;
+							if(regex.test(email) === false) {
+							printError("emailErr", "Please enter a valid email address");
+							} else{
+							printError("emailErr", "");
+							emailErr = false;
+						}
+				}
+
+				// Validate mobile number
+				if(mobile == "") {
+					printError("mobileErr", "Please enter your mobile number");
+				} else {
+					var regex = /^[1-9]\d{9}$/;
+					if(regex.test(mobile) === false) {
+						printError("mobileErr", "Please enter a valid 10 digit mobile number");
+					} else{
+						printError("mobileErr", "");
+						mobileErr = false;
+					}
+				}
+
+				// Validate status
+				if(status == "") {
+					printError("statusErr", "Please select your service");
+				} else {
+				  printError("statusErr", "");
+				   statusErr = false;
+				}
+
+				
+				// Prevent the form from being submitted if there are any errors
+				if((fnameErr || emailErr || mobileErr || statusErr) == true) {
+				   return false;
+				} else {
+					// Creating a string from input data for preview
+					var dataPreview = "You've entered the following details: \n" +
+									  "First name: " + fname + "\n" +
+									  "Email Address: " + email + "\n" +
+									  "Contact Number: " + mobile + "\n" +
+									  "Status: " + status + "\n";
+									  
+									  
+				  
+					// Display input data in a dialog box before submitting the form
+					alert(dataPreview);
+				}
+			};
+
+
+</script>
+
+
+
+    </head>
+
+    <body>
+
+        <!--Home page Start-->
+        <section id="banner">
+            <!--logo-->
+                <img src="images/logo.png" alt="" class="logo wow slideInRight" data-wow-duration="1s" data-wow-delay="1s"  >
+            <!--banner-->
+
+            <div class="banner-text">
+                <!--banner center text (Company name)-->
+                <h1 class="wow bounceInUp" data-wow-duration="2s" data-wow-delay="1s">Bike Service</h1>
+                <!--banner center text-->
+                <p class="wow bounceInDown" data-wow-duration="2s" data-wow-delay="1s">Trusted and Efficient<br>Two Wheeler Repair And Services</p>
+                <!--Button div-->
+                <div class="banner-btn">
+                    <a href="#" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s"><span></span> Register Now</a>
+                    <a href="#" class="wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s"><span></span>Read More</a>
+                </div>
+            </div>
+        </section>
+        <!--home page end here-->
+
+        <!--Nav bar start here-->
+        <div id="sideNav">
+            <nav>
+                <ul>
+                    <li><a href="#banner" style="font-size: 18px;color: white;"><i class="fa fa-home" aria-hidden="true" style="padding: 10px; font-size: 20px;"></i> Home</a></li>
+                    <li><a href="#feature" style="font-size: 18px; color: white;"> <i class="fa fa-info" aria-hidden="true" style="padding: 10px; font-size: 20px;"></i> Features</a></li>
+                    <li><a href="#service" style="font-size: 18px;color: white;"><i class="fa fa-list" aria-hidden="true" style="padding: 10px; font-size: 20px;"></i> Services</a></li>
+                    <li><a href="#testimonial" style="font-size: 18px; color: white;"> <i class="fa fa-commenting" aria-hidden="true" style="padding: 10px; font-size: 20px;"></i> Comments</a></li>
+                    <li><a href="#footer" style="font-size: 18px; color: white;"><i class="fa fa-phone-square" aria-hidden="true" style="padding: 10px; font-size: 20px;"></i> Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+		 <!--Nav bar End here-->
+		
+        <!--div for Admin using icon-->
+        <div id="menu_admin">
+            <a href="admin/login.html" style="color:white;"><i class="fa fa-user-circle " aria-hidden="true"></i></a> 
+        </div>
+
+        <!--div for toggle using img-->
+        <div id="menuBtn">
+            <img src="images/toggle.png" alt="" id="menu">
+        </div>
+        
+        <!--Script for nav bar with responsive and toggle-->
+        <script>
+            var menuBtn = document.getElementById("menuBtn")
+            var sideNav = document.getElementById("sideNav")
+            var menu = document.getElementById("menu")
+
+            sideNav.style.right = "-250px";
+
+            menuBtn.onclick = function(){       //onclick function
+                if(sideNav.style.right == "-250px")
+                {
+                    sideNav.style.right = "0";
+                    menu.src = "images/close.png";   //closing img
+                }
+                else{
+                    sideNav.style.right = "-250px";
+                    menu.src = "images/toggle.png";    //menu img
+                }
+            }       //Nav bar function ends here
+            
+            // function for smooth scroll
+            var scroll = new SmoothScroll('a[href*="#"]', {
+                speed: 1000,
+                speedAsDuration: true
+            });
+        </script>
+        <!--script ends here-->
+        
+
+        <!--features page Start here-->
+        <section id="feature">
+
+            <!--heading div-->
+            <div class="title-text ">
+                <p class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="1s">FEATURES</p>
+                <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"><b>Why Choose Us</b></h1>
+            </div>
+
+            <!--Feature box-->
+            <div class="feature-box">
+
+                <div class="features">
+                    <!--first feature-->
+                    <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"><b>About us</b></h1>
+                    <div class="features-desc">
+                        <!--side icons-->
+                        <div class="feature-icon wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s"><i class="fa fa-shield "></i></div>
+                        <!--description text-->
+                        <div class="feature-text">
+                            <p style="text-align: justify;" class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">We at Bike Service Centre therefore, provide repair and maintenance services
+                                 of the two-wheeler so that it works well and provide great service.You can rely on us for rendering repairing services of two wheeler of any type - bikes and scooters. Contact us today!</p>
+                        </div>
+                    </div>
+
+                    <!--Second feature-->
+                    <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"><b>Affordable</b></h1>
+                    <div class="features-desc">
+                        <!--side icons-->
+                        <div class="feature-icon wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s"><i class="fa fa-inr"></i></div>
+                        <!--description text-->
+                        <div class="feature-text">
+                            <p style="text-align: justify;" class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Get your motor bike general service at your doorstep for Rs.599/- <br>And also get your serviced Rs.50/- OFF On weekdays on labor charges.</p>
+                        </div>
+                    </div>
+
+                    <!--Third feature-->
+                    <h1 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s"><b>Delivery</b></h1>
+                    <div class="features-desc">
+                         <!--side icons-->
+                        <div class="feature-icon wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s"><i class="fa fa-check-square-o"></i></div>
+                         <!--description text-->
+                        <div class="feature-text">
+                            <p style="text-align: justify;" class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">Two wheeler should be maintained properly and repaired within due course of 
+                                time to avoid unexpected breakdown of engine, battery or parts.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!--Feature description div end here-->
+
+                <!--img-->
+                <div class="features-img">
+                    <img src="images/about.jpg" class="wow slideInRight" data-wow-duration="1s" data-wow-delay="1s" alt="">
+                </div>
+
+            </div>
+        </section>
+    <!--Features page end here-->
+
+
+        <!--service page start-->
+        <section id="service">
+
+            <!--heading text -->
+            <div class="title-text">
+                <p class="wow FadeInDown" data-wow-duration="1s" data-wow-delay="1s">SERVICES</p>
+                <h1 class="wow FadeInUp" data-wow-duration="1s" data-wow-delay="1s"><b>We provide better</b></h1>
+            </div>
+
+            <!--services box -->
+            <div class="service-box ">
+
+                <!-- for single service -->
+                <div class="single-service wow zoomInLeft" data-wow-duration="2s" data-wow-delay="1s">
+                    <!-- service img-->
+                    <img src="images/service1" alt=""  > 
+                    <!--overlay-->
+                    <div class="overlay"></div>
+                    <!--description after overlay-->
+                    <div class="service-desc">
+                        <!--service name-->
+                        <h2> General Services </h2>
+                        <hr>
+                        <!-- service details-->
+                        <p>We have an expert team to provide two wheeler repair and services.</p>
+                        <!--tag for enquire the services-->
+                        <a href="#footer" style="color:rgb(194, 191, 36);font-size: 23px;">Enquire Now  <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                 <!-- for single service -->
+                 <div class="single-service wow zoomInRight" data-wow-duration="2s" data-wow-delay="1s">
+                    <!-- service img-->
+                   <img src="images/service5.jpg" alt="" >
+                    <!--overlay-->
+                   <div class="overlay"></div>
+                    <!--description after overlay-->
+                   <div class="service-desc">
+                        <!--service name-->
+                       <h2>Water wash</h2>
+                       <hr>
+                       <!-- service details-->
+                       <p>We have quality checked team to wash the bikes.</p>
+                            <!--tag for enquire the services-->
+                           <a href="#footer" style="color:rgb(194, 191, 36);font-size: 23px;">Enquire Now  <i class="fa fa-arrow-right"></i></a>
+                   </div>
+               </div>
+
+                <!-- for single service -->
+                <div class="single-service wow zoomInLeft" data-wow-duration="2s" data-wow-delay="1s">
+                    <!-- service img-->
+                   <img src="images/service4" alt="" >
+                    <!--overlay-->
+                   <div class="overlay"></div>
+                    <!--description after overlay-->
+                   <div class="service-desc">
+                        <!--service name-->
+                       <h2>Oil Change</h2>
+                       <hr>
+                       <!-- service details-->
+                       <p>We have expert team for <br>
+                           repairing minor details of your two wheeler.</p>
+                            <!--tag for enquire the services-->
+                           <a href="#footer" style="color:rgb(194, 191, 36);font-size: 23px;">Enquire Now  <i class="fa fa-arrow-right"></i></a>
+                   </div>
+               </div>
+
+                <!-- for single service -->
+                <div class="single-service wow zoomInRight" data-wow-duration="2s" data-wow-delay="1s">
+                     <!-- service img-->
+                    <img src="images/service2" alt="" >
+                     <!--overlay-->
+                    <div class="overlay"></div>
+                     <!--description after overlay-->
+                    <div class="service-desc">
+                         <!--service name-->
+                        <h2>Denting/Painting</h2>
+                        <hr>
+                        <!-- service details-->
+                        <p>We provide denting and 
+                            painting services for  your two wheelers.</p>
+                             <!--tag for enquire the services-->
+                            <a href="#footer" style="color:rgb(194, 191, 36);font-size: 23px;">Enquire Now  <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+			</div>
+            <!-- service box end-->
+        </section>
+		<!--service page end-->
+
+
+        <!--testimonial page -->
+        <section id="testimonial">
+
+            <!--heading -->
+            <div class="title-text">
+                <p class="wow FadeInDown" data-wow-duration="1s" data-wow-delay="1s">TESTIMONIAL</p>
+                <h1 class="wow FadeInUp" data-wow-duration="1s" data-wow-delay="1s"><b>We provide better</b></h1>
+            </div>
+
+            <!--testimonial -->
+            <div class="testimonial-row wow zoomInDown" data-wow-duration="2s" data-wow-delay="1s">
+
+                <!--div for first testimonial-->
+                <div class="testimonial-col">
+                    <!-- div for client img and name-->
+                    <div class="user">
+                        <img src="images/review1.jpg" alt="" class="wow FadeInLeft" data-wow-duration="2s" data-wow-delay="3s">  <!--img for clients review-->
+                        <!--clients name  div-->
+                        <div class="user-info wow FadeInUp" data-wow-duration="2s" data-wow-delay="3s">
+                            <h4 >Rohit<i class="fa fa-twitter"></i></h4>
+                            <small>@rohitsharma</small>
+                        </div>
+                    </div>
+                    <!--Clients reviews text-->
+                    <p class="wow FadeInUp" data-wow-duration="2s" data-wow-delay="3s">They are saviors for lifetime since  i always depend on them for my bikes minor repairs.
+                        They have done amazing painting on my bike.Im very satisfed with their services. </p>
+                </div>  <!--1st div end-->
+
+                <!--div for second testimonial-->
+                <div class="testimonial-col">
+                    <!-- div for client img and name-->
+                    <div class="user">
+                        <img src="images/review2.jpg" alt="" class="wow FadeInLeft" data-wow-duration="2s" data-wow-delay="3s">  <!--img for clients review-->
+                        <!--clients name -->
+                        <div class="user-info wow FadeInUp" data-wow-duration="2s" data-wow-delay="3s">
+                            <h4>Zara<i class="fa fa-twitter"></i></h4>
+                            <small>@zarakanesh</small>
+                        </div>
+                    </div>
+                     <!--Clients reviews text-->
+                    <p class="wow FadeInUp" data-wow-duration="2s" data-wow-delay="3s">They have done amazing painting on my bike.Im very satisfed with their services.</p>
+                </div>   <!-- second testimonial end-->
+
+                <!--div for Third testimonial-->
+                <div class="testimonial-col">
+                    <!-- div for client img and name-->
+                    <div class="user">
+                        <img src="images/review4.jpg" alt="" class="wow FadeInLeft" data-wow-duration="2s" data-wow-delay="3s">  <!--img for clients review-->
+                        <!--clients name -->
+                        <div class="user-info wow FadeInUp" data-wow-duration="2s" data-wow-delay="3s">
+                            <h4>Prithiv<i class="fa fa-twitter"></i></h4>
+                            <small>@prithivraji</small>
+                        </div>
+                    </div>
+                     <!--Clients reviews text-->
+                    <p class="wow FadeInUp" data-wow-duration="2s" data-wow-delay="3s">They have repaired my scooty really well.I would recommend them to everyone.
+                        They have done amazing painting on my bike.Im very satisfed with their services.
+                    </p>
+                </div>   <!--Third div end-->
+
+            </div>
+           
+        </section>
+    <!--testimonial ends here-->
+
+
+        <!--footer page start-->
+        <section id="footer">
+
+            <!--heading -->
+            <div class="title-text">
+                <p class="wow FadeInDown" data-wow-duration="1s" data-wow-delay="1s">CONTACT</p>
+                <h1 class="wow FadeInUp" data-wow-duration="1s" data-wow-delay="1s"><b>Visit shop today</b></h1>
+            </div>
+
+            <div class="container" style="background-color: rgb(203, 243, 230); border-radius: 5px;
+            padding: 30px;">
+                
+                <div class="row"  ><br>
+
+                    <div class="col-md-5 wow slideInLeft" data-wow-duration="1s" data-wow-delay="1s" style="color: black; font-weight: 500;font-size: 15px;">
+                        <p style="text-align: justify;font-size: 20px;">Contact us and we'll get back to you within 24 hours.</p>
+                        <p style="text-align: justify;font-size: 20px;"><span class="glyphicon glyphicon-map-marker" style="color: #009688;"></span> Coimbatore, Tamil Nadu</p>
+                        <p style="text-align: justify;font-size: 20px;"><span class="glyphicon glyphicon-phone" style="color: #009688;"></span>   +91 9715515158</p>
+                        <p style="text-align: justify;font-size: 20px;"><span class="glyphicon glyphicon-envelope"style="color: #009688;"></span>   lisha@gmail.com</p>
+                        <h3>Opening hours</h3>
+                        <p ><i class="fa fa-clock-o" style="margin-right: 5px; color: #009688;font-size: 22px;" ></i>Monday to Friday - 9am to 9pm</p>
+                        <p><i class="fa fa-clock-o" style="margin-right: 5px; color: #009688;font-size: 22px;"></i>Saturday to Sunday - 8am to 11pm</p>
+                    </div>
+
+                    <div class="col-md-7 wow slideInRight" data-wow-duration="1s" data-wow-delay="1s">
+                        <form class="form-horizontal"  name="contactForm" onsubmit="return validateForm()" action="#" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control"  name="fname" placeholder="Name" type="text" >
+                                    <div class="error" style="color: #009688;" id="fnameErr"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" >
+                                    <div class="error" style="color:#009688;" id="emailErr"></div>
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control" name="mobile" placeholder="Contact No" type="text" >
+                                    <div class="error" id="mobileErr" style="color: #009688;"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="bdate" name="bdate" placeholder="" type="date">
+                                </div>
+                            </div><br>
+                            <select  name="status" class="form-control" >
+                                <option value="0">Select required services.</option>
+                                <option value="Pending">Oil Change</option>
+                                <option value="Delivery">Water wash</option>
+                                <option value="Completed">General service</option>
+                            </select>
+                            <div class="error"  style="color: #009688;" id="statusErr"></div>
+                            <br>
+
+                            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="3"></textarea><br><br>
+                            <button type="submit" class="form-btn" style=" background: #66ffff; border: black 1px solid; width: 250px;height: 40px;border-radius: 5px;"><span></span><b>Submit</b></button>
+                            <br>
+                        
+                            
+                        
+                        </form>
+                    </div>
+                  
+                </div><br>
+
+                <div class="row wow bounceInDown" data-wow-duration="2s" data-wow-delay="2s">
+                    <center>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15665.12005323596!2d76.9586527165431!3d11.017605236832342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85855910aed83%3A0x80875de5cd370a9d!2sGandhipuram%2C%20Tamil%20Nadu%20641012!5e0!3m2!1sen!2sin!4v1625208721705!5m2!1sen!2sin"
+                         width="90%" height="250px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        
+                    </center>
+                    
+                </div><br>
+              
+              </div><br>
+           
+            <!--footer social icons div-->
+            <div class="social-links">
+                <i class="fa fa-facebook wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s" style="color: blue;"></i>
+                <i class="fa fa-instagram wow fadeInUp" data-wow-duration="2s" data-wow-delay="2s" style="color: rgb(240, 29, 65);"></i>
+                <i class="fa fa-twitter wow fadeInUp" data-wow-duration="3s" data-wow-delay="3s"></i>
+                <p >Copyright @2021 LishaDhamothar</p><br>
+            </div>
+
+        </section>
+        <!--footer page end-->
+		<!-- wow.js for animation -->
+		  <script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+
+
+    </body>
+</html>
